@@ -6,6 +6,7 @@
   "scripts": {
     "electron": "electron",
     "clean": "rimraf prev_directory.txt .idea my-pixiv-viewer-*",
+    "eslint": "eslint lib main.js",
     "build": "npm-run-all clean build:*",
     "build:OSX": "electron-packager . my-pixiv-viewer --platform=darwin --icon=$(npm root)/../icons/photo.icns"
   },
@@ -18,7 +19,8 @@
   },
   "devDependencies": {
     "electron-packager": "^9.1.0",
-    "rimraf": "^2.6.2",
-    "npm-run-all": "^4.1.1"
+    "eslint": "^4.7.0",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2"
   }
 }

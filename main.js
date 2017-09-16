@@ -1,36 +1,44 @@
-var electron = require('electron');
-var app = electron.app;
-var BrowserWindow = electron.BrowserWindow;
-var Menu = electron.Menu;
-var fs = require('fs');
-const ipcMain = electron.ipcMain;
+const fs = require('fs');
 
 const {
+    app,
+    BrowserWindow,
+    Menu,
+    ipcMain,
     dialog
 } = require('electron');
 
 const directoryConfigFilePath = __dirname + '/prev_directory.txt';
 
-app.on('window-all-closed', function() {
-    if (process.platform != 'darwin')
+app.on('window-all-closed', function()
+{
+    if (process.platform !== 'darwin')
+    {
         app.quit();
+    }
 });
 
 let mainWindow;
 let subWindow;
 
-app.on('ready', function() {
+app.on('ready', function()
+{
     Menu.setApplicationMenu(menu);
     mainWindow = createMainWindow();
     subWindow = createSubWindow();
 
-    setTimeout(function() {
-        fs.readFile(directoryConfigFilePath, 'utf8', function (err, data) {
-            if (err) {
-                if (err.errno === -2) {
-                    console.log("ディレクトリ設定がないです. [File] -> [Open] で設定してください.");
+    setTimeout(function()
+    {
+        fs.readFile(directoryConfigFilePath, 'utf8', function (err, data)
+        {
+            if (err)
+            {
+                if (err.errno === -2)
+                {
+                    console.log('ディレクトリ設定がないです. [File] -> [Open] で設定してください.');
                 }
-                else {
+                else
+                {
                     console.error(err);
                 }
                 return;
@@ -43,12 +51,13 @@ app.on('ready', function() {
 });
 
 // メニュー情報の作成
-var template = [{
+let template = [{
     label: 'ReadUs',
     submenu: [{
         label: 'Quit',
         accelerator: 'Command+Q',
-        click: function() {
+        click: function()
+        {
             app.quit();
         }
     }]
@@ -57,15 +66,20 @@ var template = [{
     submenu: [{
         label: 'Open',
         accelerator: 'Command+O',
-        click: function() {
+        click: function()
+        {
             // 「ディレクトリを開く」ダイアログの呼び出し
             dialog.showOpenDialog({
                 properties: ['openDirectory']
-            }, function(baseDir) {
-                if (baseDir && baseDir[0]) {
-                    var directoryPath = baseDir[0];
-                    fs.writeFile(directoryConfigFilePath, directoryPath , function (err) {
-                        if (err !== null) {
+            }, function(baseDir)
+            {
+                if (baseDir && baseDir[0])
+                {
+                    let directoryPath = baseDir[0];
+                    fs.writeFile(directoryConfigFilePath, directoryPath , function (err)
+                    {
+                        if (err !== null)
+                        {
                             console.error(err);
                         }
                     });
@@ -77,59 +91,66 @@ var template = [{
 }, {
     label: 'View',
     submenu: [{
-            label: 'Toggle DevTools',
-            accelerator: 'Alt+Command+I',
-            click: function() {
-                BrowserWindow.getFocusedWindow().toggleDevTools();
-            }
+        label: 'Toggle DevTools',
+        accelerator: 'Alt+Command+I',
+        click: function()
+        {
+            BrowserWindow.getFocusedWindow().toggleDevTools();
         }
+    }
     ]
 }];
 
-var menu = Menu.buildFromTemplate(template);
+const menu = Menu.buildFromTemplate(template);
 
-function createMainWindow() {
+function createMainWindow()
+{
     // ブラウザ(Chromium)の起動, 初期画面のロード
-    var mainWindow = new BrowserWindow({
+    let mainWindow = new BrowserWindow({
         width: 800,
         height: 800,
     });
     mainWindow.loadURL('file://' + __dirname + '/lib/html/main_viewer.html');
     mainWindow.center();
-    mainWindow.on('closed', function() {
+    mainWindow.on('closed', function()
+    {
         mainWindow = null;
     });
 
     return mainWindow;
 }
 
-function createSubWindow(){
-    var subWindow = new BrowserWindow({
+function createSubWindow()
+{
+    let subWindow = new BrowserWindow({
         width: 1000,
         height: 700,
     });
     subWindow.loadURL('file://' + __dirname + '/lib/html/sub_viewer.html');
 
     subWindow.center();
-    subWindow.on('closed', function() {
+    subWindow.on('closed', function()
+    {
         subWindow = null;
     });
     return subWindow;
 }
 
-function sendDirectoryPath(directoryPath) {
-    if (mainWindow == null)
+function sendDirectoryPath(directoryPath)
+{
+    if (mainWindow === null)
     {
-        console.error("mainWindow is null");
+        console.error('mainWindow is null');
         return;
     }
     mainWindow.webContents.send('main_directory', directoryPath);
 }
 
-ipcMain.on('show_illust_id', function( ev, message ) {
-    if (subWindow == null)
+ipcMain.on('show_illust_id', function( ev, message )
+{
+    if (subWindow === null)
     {
-        console.error("subwindow is null");
+        console.error('subwindow is null');
         return;
     }
     console.log( message );
