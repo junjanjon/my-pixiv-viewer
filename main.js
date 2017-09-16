@@ -25,7 +25,12 @@ app.on('ready', function() {
     setTimeout(function() {
         fs.readFile('directory.txt', 'utf8', function (err, data) {
             if (err) {
-                console.error(err);
+                if (err.errno === -2) {
+                    console.log("ディレクトリ設定がないです. [File] -> [Open] で設定してください.");
+                }
+                else {
+                    console.error(err);
+                }
                 return;
             }
 
