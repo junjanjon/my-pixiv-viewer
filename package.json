@@ -1,0 +1,19 @@
+{
+  "name": "pixiv-viewer",
+  "version": "1.0.0",
+  "description": "my pixiv viewer",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron"
+  },
+  "keywords": [],
+  "author": "herojunjun",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.8.0",
+    "devtron": "^1.4.0"
+  },
+  "devDependencies": {
+    "js-beautify": "^1.6.14"
+  }
+}

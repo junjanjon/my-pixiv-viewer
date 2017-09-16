@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#main-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+.comment-data {
+    display: block;
+}
+
+.image {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+
+.fullscreen {
+    background-color: #ccc;
+}
+
+.default {
+    max-height: 100%;
+}
