@@ -9,13 +9,15 @@ const {
     dialog
 } = require('electron');
 
+const directoryConfigFilePath = __dirname + '/prev_directory.txt';
+
 app.on('window-all-closed', function() {
     if (process.platform != 'darwin')
         app.quit();
 });
 
-var mainWindow;
-var subWindow;
+let mainWindow;
+let subWindow;
 
 app.on('ready', function() {
     Menu.setApplicationMenu(menu);
@@ -23,7 +25,7 @@ app.on('ready', function() {
     subWindow = createSubWindow();
 
     setTimeout(function() {
-        fs.readFile('directory.txt', 'utf8', function (err, data) {
+        fs.readFile(directoryConfigFilePath, 'utf8', function (err, data) {
             if (err) {
                 if (err.errno === -2) {
                     console.log("ディレクトリ設定がないです. [File] -> [Open] で設定してください.");
@@ -56,14 +58,16 @@ var template = [{
         label: 'Open',
         accelerator: 'Command+O',
         click: function() {
-            // 「ファイルを開く」ダイアログの呼び出し
+            // 「ディレクトリを開く」ダイアログの呼び出し
             dialog.showOpenDialog({
                 properties: ['openDirectory']
             }, function(baseDir) {
                 if (baseDir && baseDir[0]) {
                     var directoryPath = baseDir[0];
-                    fs.writeFile('directory.txt', directoryPath , function (err) {
-                        console.error(err);
+                    fs.writeFile(directoryConfigFilePath, directoryPath , function (err) {
+                        if (err !== null) {
+                            console.error(err);
+                        }
                     });
                     sendDirectoryPath(directoryPath);
                 }

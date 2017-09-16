@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "electron": "electron",
-    "packOSX": "electron-packager . my-pixiv-viewer --platform=darwin --icon=$(npm root)/../icons/photo.icns"
+    "clean": "rimraf prev_directory.txt .idea my-pixiv-viewer-*",
+    "build": "npm-run-all clean build:*",
+    "build:OSX": "electron-packager . my-pixiv-viewer --platform=darwin --icon=$(npm root)/../icons/photo.icns"
   },
   "keywords": [],
   "author": "herojunjun",
@@ -15,6 +17,8 @@
     "devtron": "^1.4.0"
   },
   "devDependencies": {
-    "electron-packager": "^9.1.0"
+    "electron-packager": "^9.1.0",
+    "rimraf": "^2.6.2",
+    "npm-run-all": "^4.1.1"
   }
 }
