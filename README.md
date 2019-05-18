@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/junjanjon/my-pixiv-viewer.svg?style=svg)](https://circleci.com/gh/junjanjon/my-pixiv-viewer)
+
 # my-pixiv-viewer
 
 [my-pixiv-follow-downloader](https://github.com/junjanjon/my-pixiv-follow-downloader) と連携して pixiv を見るツールです
