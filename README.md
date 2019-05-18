@@ -1,6 +1,6 @@
 # my-pixiv-viewer
 
-https://github.com/junjanjon/pixiv_client_mechanize (現在 close) と連携して pixiv を見るツールです
+[my-pixiv-follow-downloader](https://github.com/junjanjon/my-pixiv-follow-downloader) と連携して pixiv を見るツールです
 
 ## Usage
 
@@ -24,7 +24,7 @@ npm run electoron .
 
 初回はメニューの [File] => [Open] でディレクトリを選ぶ必要があります。
 
-[pixiv_client_mechanize](https://github.com/junjanjon/pixiv_client_mechanize) のダウンロード先ディレクトリの想定です。
+[my-pixiv-follow-downloader](https://github.com/junjanjon/my-pixiv-follow-downloader) のダウンロード先ディレクトリを指定します。
 
 ![サンプル](readme_images/sample.jpg)
 
