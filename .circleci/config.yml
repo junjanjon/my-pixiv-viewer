@@ -39,3 +39,4 @@ workflows:
   Build:
     jobs:
       - build
+      - lint
