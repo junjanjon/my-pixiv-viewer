@@ -1,32 +1,34 @@
 # my-pixiv-viewer
 
-https://github.com/herojunjun/pixiv_client_mechanize と連携して pixiv を見るツールです
+https://github.com/junjanjon/pixiv_client_mechanize (現在 close) と連携して pixiv を見るツールです
 
 ## Usage
 
 ### 初回設定
 
-npm で色々インストールする。
+npm でインストールする。
 
 ```
-git clone git@github.com:herojunjun/my-pixiv-viewer.git
+git clone git@github.com:junjanjon/my-pixiv-viewer.git
 cd my-pixiv-viewer
 npm install
 ```
 
-### viewer を起動する
+### electoron を起動する
 
 ```
 npm run electoron .
 ```
 
+### ディレクトリを設定する
+
 初回はメニューの [File] => [Open] でディレクトリを選ぶ必要があります。
 
-[pixiv_client_mechanize](https://github.com/herojunjun/pixiv_client_mechanize) のダウンロード先ディレクトリの想定です。
+[pixiv_client_mechanize](https://github.com/junjanjon/pixiv_client_mechanize) のダウンロード先ディレクトリの想定です。
 
 ![サンプル](readme_images/sample.jpg)
 
-操作方法
+## 操作方法
 
 |key|デフォルトサイズモード|フルサイズモード|
 |:-|:-|:-|
