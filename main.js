@@ -12,10 +12,7 @@ const directoryConfigFilePath = __dirname + '/prev_directory.txt';
 
 app.on('window-all-closed', function()
 {
-    if (process.platform !== 'darwin')
-    {
-        app.quit();
-    }
+    app.quit();
 });
 
 let mainWindow;
