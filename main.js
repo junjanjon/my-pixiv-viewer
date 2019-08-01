@@ -106,6 +106,9 @@ function createMainWindow()
     let mainWindow = new BrowserWindow({
         width: 800,
         height: 800,
+        webPreferences: {
+            nodeIntegration: true
+        },
     });
     mainWindow.loadURL('file://' + __dirname + '/lib/html/main_viewer.html');
     mainWindow.center();
@@ -122,6 +125,9 @@ function createSubWindow()
     let subWindow = new BrowserWindow({
         width: 1000,
         height: 700,
+        webPreferences: {
+            nodeIntegration: true
+        },
     });
     subWindow.loadURL('file://' + __dirname + '/lib/html/sub_viewer.html');
 
