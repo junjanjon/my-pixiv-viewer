@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "devtron": "^1.4.0",
-    "electron": "^6.0.2"
+    "electron": "^6.0.3"
   },
   "devDependencies": {
     "electron-packager": "^14.0.4",
