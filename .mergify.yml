@@ -3,6 +3,7 @@ pull_request_rules:
     conditions:
       - base=master
       - "status-success=ci/circleci: build"
+      - "status-success=ci/circleci: lint"
     actions:
       merge:
         strict: true
