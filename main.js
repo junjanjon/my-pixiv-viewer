@@ -10,12 +10,10 @@ const {
 
 const directoryConfigFilePath = __dirname + '/prev_directory.txt';
 
-app.allowRendererProcessReuse = true;
-
-app.on('window-all-closed', function()
+function closeApp()
 {
     app.quit();
-});
+};
 
 let mainWindow;
 let subWindow;
@@ -122,10 +120,7 @@ function createMainWindow()
     });
     mainWindow.loadURL('file://' + __dirname + '/lib/html/main_viewer.html');
     mainWindow.center();
-    mainWindow.on('closed', function()
-    {
-        mainWindow = null;
-    });
+    mainWindow.on('closed', closeApp);
 
     return mainWindow;
 }
@@ -142,10 +137,7 @@ function createSubWindow()
     subWindow.loadURL('file://' + __dirname + '/lib/html/sub_viewer.html');
 
     subWindow.center();
-    subWindow.on('closed', function()
-    {
-        subWindow = null;
-    });
+    subWindow.on('closed', closeApp);
     return subWindow;
 }
 
