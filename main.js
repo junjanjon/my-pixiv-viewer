@@ -26,7 +26,7 @@ app.on('ready', function()
     mainWindow = createMainWindow();
     subWindow = createSubWindow();
 
-    setTimeout(function()
+    mainWindow.webContents.on('did-finish-load', () =>
     {
         fs.readFile(directoryConfigFilePath, 'utf8', function (err, data)
         {
@@ -46,7 +46,7 @@ app.on('ready', function()
             console.log(data);
             sendDirectoryPath(data);
         });
-    }, 1000);
+    });
 });
 
 // メニュー情報の作成
@@ -156,6 +156,7 @@ function sendDirectoryPath(directoryPath)
         console.error('mainWindow is null');
         return;
     }
+    console.log('main_directory 実行: ' + directoryPath);
     mainWindow.webContents.send('main_directory', directoryPath);
 }
 
