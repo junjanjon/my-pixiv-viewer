@@ -10,6 +10,8 @@ const {
 
 const directoryConfigFilePath = __dirname + '/prev_directory.txt';
 
+app.allowRendererProcessReuse = true;
+
 app.on('window-all-closed', function()
 {
     app.quit();
@@ -68,11 +70,18 @@ let template = [{
             // 「ディレクトリを開く」ダイアログの呼び出し
             dialog.showOpenDialog({
                 properties: ['openDirectory']
-            }, function(baseDir)
+            }).then(result =>
             {
-                if (baseDir && baseDir[0])
+                console.log(result);
+                if (result.canceled)
                 {
-                    let directoryPath = baseDir[0];
+                    return;
+                }
+
+                if (result.filePaths[0])
+                {
+                    let directoryPath = result.filePaths[0];
+
                     fs.writeFile(directoryConfigFilePath, directoryPath , function (err)
                     {
                         if (err !== null)
