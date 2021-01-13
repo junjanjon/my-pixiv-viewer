@@ -14,7 +14,6 @@
   "author": "herojunjun",
   "license": "MIT",
   "dependencies": {
-    "devtron": "^1.4.0",
     "electron": "^10.1.2"
   },
   "devDependencies": {
