@@ -116,7 +116,6 @@ function createMainWindow()
         webPreferences: {
             nodeIntegration: true
         },
-        alwaysOnTop: true,
     });
     mainWindow.loadURL('file://' + __dirname + '/lib/html/main_viewer.html');
     mainWindow.center();
