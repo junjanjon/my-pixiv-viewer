@@ -13,7 +13,7 @@ const directoryConfigFilePath = __dirname + '/prev_directory.txt';
 function closeApp()
 {
     app.quit();
-};
+}
 
 let mainWindow;
 let subWindow;
