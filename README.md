@@ -8,18 +8,18 @@
 
 ### 初回設定
 
-npm でインストールする。
+yarn でインストールする。
 
 ```
 git clone git@github.com:junjanjon/my-pixiv-viewer.git
 cd my-pixiv-viewer
-npm install
+yarn install
 ```
 
 ### electoron を起動する
 
 ```
-npm run electoron .
+yarn run electron .
 ```
 
 ### ディレクトリを設定する
