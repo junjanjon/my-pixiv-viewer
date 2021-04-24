@@ -114,7 +114,8 @@ function createMainWindow()
         width: 800,
         height: 800,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false,
         },
     });
     mainWindow.loadURL('file://' + __dirname + '/lib/html/main_viewer.html');
@@ -130,7 +131,8 @@ function createSubWindow()
         width: 1000,
         height: 700,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false,
         },
     });
     subWindow.loadURL('file://' + __dirname + '/lib/html/sub_viewer.html');
