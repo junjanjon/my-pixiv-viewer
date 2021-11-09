@@ -14,7 +14,7 @@
   "author": "herojunjun",
   "license": "MIT",
   "dependencies": {
-    "electron": "^15.3.0"
+    "electron": "^15.3.1"
   },
   "devDependencies": {
     "electron-packager": "^15.4.0",
