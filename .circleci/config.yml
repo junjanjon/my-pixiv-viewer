@@ -5,19 +5,19 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: node:12.1
+      - image: node:14.16.1
     steps:
       - checkout
       - restore_cache:
-          key: package-lock-json-{{ checksum "package-lock.json" }}
+          key: package-lock-json-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn install
       - run:
           name: Build
-          command: npm run build
+          command: yarn run build
       - save_cache:
-          key: package-lock-json-{{ checksum "package-lock.json" }}
+          key: package-lock-json-{{ checksum "yarn.lock" }}
           paths:
             - ~/workspace
       - persist_to_workspace:
@@ -27,13 +27,13 @@ jobs:
   lint:
     working_directory: ~/workspace
     docker:
-      - image: node:12.1
+      - image: node:14.16.1
     steps:
       - attach_workspace:
           at: .
       - run:
           name: Lint
-          command: npm run eslint
+          command: yarn run eslint
 
 workflows:
   Build:
