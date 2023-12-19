@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "electron": "electron",
-    "eslint": "eslint --no-ignore lib/node_modules/main/* lib/node_modules/sub/* main.js",
+    "lint": "eslint --no-ignore lib/node_modules/main/* lib/node_modules/sub/* main.js",
+    "fixlint": "eslint --no-ignore --fix lib/node_modules/main/* lib/node_modules/sub/* main.js",
     "build": "npm-run-all clean build:*",
     "build:OSX": "electron-packager . my-pixiv-viewer --platform=darwin --icon=$(npm root)/../icons/photo.icns"
   },
