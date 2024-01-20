@@ -151,6 +151,7 @@ function sendDirectoryPath(directoryPath)
     }
     console.log('main_directory 実行: ' + directoryPath);
     mainWindow.webContents.send('main_directory', directoryPath);
+    subWindow.webContents.send('main_directory', directoryPath);
 }
 
 ipcMain.on('show_illust_id', function( ev, message )
