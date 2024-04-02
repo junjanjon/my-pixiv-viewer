@@ -68,10 +68,10 @@
     minimist "^1.2.6"
     plist "^3.0.5"
 
-"@electron/packager@^18.3.1":
-  version "18.3.1"
-  resolved "https://registry.yarnpkg.com/@electron/packager/-/packager-18.3.1.tgz#5e18a0840302ec70911c88dbbbf01837aef559d6"
-  integrity sha512-KpbLQH/ZYwmMASthBLy8GFn/5JlLdEayYFtLfkOcMWjBayDDjbatpWfN5Px9jMJZKXKO9knVc9hOgrDYxJsFMw==
+"@electron/packager@^18.3.2":
+  version "18.3.2"
+  resolved "https://registry.yarnpkg.com/@electron/packager/-/packager-18.3.2.tgz#49412a06b3233635bd9cdf87edf9cd9e2aa0567f"
+  integrity sha512-orjylavppgIh24qkNpWm2B/LQUpCS/YLOoKoU+eMK/hJgIhShLDsusPIQzgUGVwNCichu8/zPAGfdQZXHG0gtw==
   dependencies:
     "@electron/asar" "^3.2.1"
     "@electron/get" "^3.0.0"
