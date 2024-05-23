@@ -546,10 +546,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-electron@^29.1.3:
-  version "29.1.3"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-29.1.3.tgz#bd127c6c5bef03ca2cf4595480b8db7e4f111dbe"
-  integrity sha512-E+ZDRlrVQp4lRxVpK8uTaiHZ8CgjpZEs3gvhFOfbnUGHRHQ6FpPOBZQpQUx84JimOFSaz/KP6Jm2x4TFgoN56A==
+electron@^30.0.7:
+  version "30.0.7"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-30.0.7.tgz#305e1c2e79ca2cba34b9ced08f7efcd48487e09e"
+  integrity sha512-9ypQLaIvLj9W8o6fIiZpUabXJAW3a+K6vT78Vk9UJVImKVAoFIe1Umwd2FleyMqhnFBPF58Iawu/pSV0s+wRnA==
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^20.9.0"
