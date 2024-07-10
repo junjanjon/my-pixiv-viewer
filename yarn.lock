@@ -539,10 +539,10 @@ dir-compare@^4.2.0:
     minimatch "^3.0.5"
     p-limit "^3.1.0 "
 
-electron@^31.0.2:
-  version "31.0.2"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-31.0.2.tgz#9b719fe6072060fe74cb609bcbb84694abce5b17"
-  integrity sha512-55efQ5yfLN+AQHcFC00AXQqtxC3iAGaxX2GQ3EDbFJ0ca9GHNOdSXkcrdBElLleiDrR2hpXNkQxN1bDn0oxe6w==
+electron@^31.2.0:
+  version "31.2.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-31.2.0.tgz#f6dc4c42f9118fd0f57b3c04676503df2bf16ece"
+  integrity sha512-5w+kjOsGiTXytPSErBPNp/3znnuEMKc42RD41MqRoQkiYaR8x/Le2+qWk1cL60UwE/67oeKnOHnnol8xEuldGg==
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^20.9.0"
