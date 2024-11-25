@@ -1,24 +1,23 @@
 queue_rules:
   - name: default
-    conditions:
-      - author~=^dependabot\[bot\]$
-      - "status-success=ci/circleci: build"
-      - "status-success=ci/circleci: lint"
-
-pull_request_rules:
-  - name: Automatic merge
-    conditions:
+    queue_conditions:
       - base=master
       - author~=^dependabot\[bot\]$
       - "status-success=ci/circleci: build"
       - "status-success=ci/circleci: lint"
-    actions:
-      queue:
-        name: default
-        method: merge
+    merge_conditions:
+      - author~=^dependabot\[bot\]$
+      - "status-success=ci/circleci: build"
+      - "status-success=ci/circleci: lint"
+    merge_method: merge
 
+pull_request_rules:
   - name: delete head branch after merge
     conditions:
       - merged
     actions:
       delete_head_branch: {}
+  - name: Automatic merge
+    conditions: []
+    actions:
+      queue:
